@@ -1,0 +1,35 @@
+{
+  "name": "sapi-utils",
+  "version": "0.1.0-alpha.1",
+  "description": "Add some useful functions for minecraft script API.",
+  "keywords": [
+    "minecraft"
+  ],
+  "homepage": "https://github.com/RawDiamondMC/sapi-utils#readme",
+  "bugs": {
+    "url": "https://github.com/RawDiamondMC/sapi-utils/issues",
+    "email": "RawDiamondMC@outlook.com"
+  },
+  "license": "EPL-2.0",
+  "author": "RawDiamondMC <RawDiamondMC@outlook.com>",
+  "files": ["**/*.ts"],
+  "funding": [
+    {
+      "type": "Buy Me a Coffee",
+      "url": "https://www.buymeacoffee.com/rawdiamondmc"
+    }
+  ],
+  "main": "src/index.js",
+  "repository": "RawDiamondMC/sapi-utils",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@minecraft/server": "1.10.0-beta.1.20.70-stable"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "typings": "src/index.d.ts"
+}
