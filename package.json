@@ -12,7 +12,10 @@
   },
   "license": "EPL-2.0",
   "author": "RawDiamondMC <RawDiamondMC@outlook.com>",
-  "files": ["src"],
+  "files": [
+    "src/**/*.js",
+    "src/**/*.d.ts"
+  ],
   "funding": [
     {
       "type": "Buy Me a Coffee",
@@ -22,14 +25,19 @@
   "main": "src/index.js",
   "repository": "RawDiamondMC/sapi-utils",
   "scripts": {
-    "build": "tsc"
+    "build": "tsx build.ts",
+    "tsc": "tsc"
   },
   "devDependencies": {
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "esbuild": "^0.20.2",
+    "tsx": "^4.8.2",
+    "@types/node": "^20.12.8"
   },
   "peerDependencies": {
-    "@minecraft/server": "1.10.0-beta.1.20.70-stable"
+    "@minecraft/server": ">=1.10.0-beta.1.20.70-preview.20 <1.10.0-rc.1.20.80-preview.20 || >=1.11.0-beta.1.20.80-preview.20 <1.11.0-rc.1.21.0-preview.20 || >=1.12.0-beta.1.21.0-preview.20 <1.12.0-rc",
+    "@minecraft/server-ui": ">=1.2.0-beta.1.20.10-preview.23 <1.2.0-rc"
   },
-  "packageManager": "pnpm@8.15.6",
+  "packageManager": "pnpm@9.0.6",
   "typings": "src/index.d.ts"
 }
