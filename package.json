@@ -1,6 +1,6 @@
 {
   "name": "sapi-utils",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "Add some useful functions for minecraft script API.",
   "keywords": [
     "minecraft"
