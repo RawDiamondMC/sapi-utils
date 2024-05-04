@@ -4,4 +4,3 @@ export * from "./server/item.js";
 export * from "./server/block.js";
 export * from "./server/entity.js";
 export * from "./server/player.js";
-//export * from "./quest/index.js"; not finished
