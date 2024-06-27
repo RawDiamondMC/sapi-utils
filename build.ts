@@ -7,7 +7,7 @@ console.log(
     entryPoints: ["src/index.ts"],
     outfile: "src/index.js",
     external: ["@minecraft/server", "@minecraft/server-ui"],
-    target: "es2022",
+    target: "es2023",
     minifySyntax: true,
     minifyWhitespace: true,
   }),

@@ -98,6 +98,11 @@ export function consumeAmount(
   return newItem;
 }
 
+/**
+ * Get the item amount in a container
+ * @param container
+ * @param item the item's id
+ */
 export function getItemAmountInContainer(container: Container, item: string) {
   let amount: number = 0;
   for (let slot = 0; slot < container.size; slot++) {
@@ -109,6 +114,12 @@ export function getItemAmountInContainer(container: Container, item: string) {
   return amount;
 }
 
+/**
+ * Remove the item by amount in a container
+ * @param container
+ * @param itemId
+ * @param amount
+ */
 export function removeItemInContainer(
   container: Container,
   itemId: string,
