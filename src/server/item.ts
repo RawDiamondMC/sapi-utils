@@ -76,8 +76,8 @@ export function consumeDurability(
  * @param item The {@link ItemStack}.
  * @param value The amount to be removed.
  * @returns the new {@link ItemStack}.
- * @throws SapiError if amount is not enough to be removed.
- * @throws SapiError if max amount is not high enough.
+ * @throws Error if amount is not enough to be removed.
+ * @throws Error if max amount is not high enough.
  */
 export function consumeAmount(
   item: ItemStack,
