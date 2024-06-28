@@ -1,4 +1,5 @@
 import { Effect, EffectType, Entity } from "@minecraft/server";
+import { BadEffects, GoodEffects } from "../types";
 
 /**
  * Wrapper function for removing effect(s) or effect group.
@@ -16,36 +17,14 @@ export function clearEffect(
       });
       break;
     case "bad":
-      entity.removeEffect("slowness");
-      entity.removeEffect("mining_fatigue");
-      entity.removeEffect("instant_damage");
-      entity.removeEffect("nausea");
-      entity.removeEffect("blindness");
-      entity.removeEffect("hunger");
-      entity.removeEffect("weakness");
-      entity.removeEffect("poison");
-      entity.removeEffect("wither");
-      entity.removeEffect("fatal_poison");
-      entity.removeEffect("bad_omen");
-      entity.removeEffect("levitation");
-      entity.removeEffect("darkness");
+      BadEffects.forEach((effect: string) => {
+        entity.removeEffect(effect);
+      });
       break;
     case "good":
-      entity.removeEffect("speed");
-      entity.removeEffect("haste");
-      entity.removeEffect("strength");
-      entity.removeEffect("instant_health");
-      entity.removeEffect("regeneration");
-      entity.removeEffect("jump_boost");
-      entity.removeEffect("invisibility");
-      entity.removeEffect("water_breathing");
-      entity.removeEffect("health_boost");
-      entity.removeEffect("night_vision");
-      entity.removeEffect("saturation");
-      entity.removeEffect("absorption");
-      entity.removeEffect("village_hero");
-      entity.removeEffect("conduit_power");
-      entity.removeEffect("slow_falling");
+      GoodEffects.forEach((effect: string) => {
+        entity.removeEffect(effect);
+      });
       break;
     default:
       if (Array.isArray(effectType)) {
