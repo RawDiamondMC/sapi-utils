@@ -2,8 +2,28 @@ import { Player, world } from "@minecraft/server";
 import { requireNonNull } from "./misc";
 import { getModName } from "./index";
 
+/**
+ * Get the current stack trace.
+ */
 export function getStackTrace(): string {
   return requireNonNull(Error().stack);
+}
+
+let logContent: string = "";
+
+/**
+ * Get the log history.
+ */
+export function getLogHistory() {
+  return logContent;
+}
+
+/**
+ * Add to the log history. \n will be automatically added.
+ * @param log
+ */
+export function addToLogHistory(log: string) {
+  return logContent;
 }
 
 export enum LogLevel {
@@ -96,12 +116,14 @@ export class Logger {
    * @param players
    */
   debug(message: string, players?: Player[]) {
+    const content = `§b§l[${this.id}]§r§p§o[DEBUG]§r ${message}`;
+    addToLogHistory(content);
     if (players !== undefined) {
       players.forEach((player: Player) => {
-        player.sendMessage(`§b§l[${this.id}]§r§p§o[DEBUG]§r ${message}`);
+        player.sendMessage(content);
       });
     } else {
-      sendMessage(`§b§l[${this.id}]§r§p§o[DEBUG]§r ${message}`, LogLevel.DEBUG);
+      sendMessage(content, LogLevel.DEBUG);
     }
   }
 
@@ -112,12 +134,14 @@ export class Logger {
    * @param players
    */
   info(message: string, players?: Player[]) {
+    const content = `§b§l[${this.id}]§r§9§o[INFO]§r ${message}`;
+    addToLogHistory(content);
     if (players !== undefined) {
       players.forEach((player: Player) => {
-        player.sendMessage(`§b§l[${this.id}]§r§9§o[INFO]§r ${message}`);
+        player.sendMessage(content);
       });
     } else {
-      sendMessage(`§b§l[${this.id}]§r§9§o[INFO]§r ${message}`, LogLevel.DEBUG);
+      sendMessage(content, LogLevel.DEBUG);
     }
   }
 
@@ -127,10 +151,14 @@ export class Logger {
    * @param players the players that would receive stack trace.
    */
   warn(message: string, players?: Player[]) {
-    console.warn(`§b§l[${this.id}]§r§e§o[WARN]§r ${message}`);
+    const content = `§b§l[${this.id}]§r§e§o[WARN]§r ${message}`;
+    const stacktrace = `§oStacktrace: §r\n${getStackTrace()}`;
+    addToLogHistory(content);
+    addToLogHistory(stacktrace);
+    console.warn(content);
     if (players !== undefined) {
       players.forEach((player: Player) => {
-        player.sendMessage(`§oStacktrace: §r\n${getStackTrace()}`);
+        player.sendMessage(stacktrace);
       });
     }
   }
@@ -141,10 +169,14 @@ export class Logger {
    * @param players the players that would receive stack trace.
    */
   error(message: string, players?: Player[]) {
-    console.error(`§b§l[${this.id}]§r§c§o[ERROR]§r ${message}`);
+    const content = `§b§l[${this.id}]§r§c§o[ERROR]§r ${message}`;
+    const stacktrace = `§oStacktrace: §r\n${getStackTrace()}`;
+    addToLogHistory(content);
+    addToLogHistory(stacktrace);
+    console.error(content);
     if (players !== undefined) {
       players.forEach((player: Player) => {
-        player.sendMessage(`§oStacktrace: §r\n${getStackTrace()}`);
+        player.sendMessage(stacktrace);
       });
     }
   }
@@ -153,7 +185,11 @@ export class Logger {
    * Same as `error()`, but the stack trace will be sent to all players
    */
   fatal(message: string) {
-    console.error(`§b§l[${this.id}]§r§c§o[ERROR]§r ${message}`);
-    console.error(`§oStacktrace: §r\n${getStackTrace()}`);
+    const content = `§b§l[${this.id}]§r§c§o[ERROR]§r ${message}`;
+    const stacktrace = `§oStacktrace: §r\n${getStackTrace()}`;
+    addToLogHistory(content);
+    addToLogHistory(stacktrace);
+    console.error(content);
+    console.error(stacktrace);
   }
 }
