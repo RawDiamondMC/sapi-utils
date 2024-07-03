@@ -1,4 +1,5 @@
 import { system } from "@minecraft/server";
+export * from "./stringify.js";
 
 /**
  * Generate a random integer.
