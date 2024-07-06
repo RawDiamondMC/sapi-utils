@@ -1,5 +1,5 @@
 import { Block, BlockVolume, Dimension, Vector3 } from "@minecraft/server";
-import { ensureNamespace } from "../misc";
+import { ensureNamespace } from "./misc";
 
 /**
  * Find blocks around the given location with specific radius.

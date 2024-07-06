@@ -7,7 +7,7 @@ import {
   ItemStack,
   Player,
 } from "@minecraft/server";
-import { ensureNamespace } from "../misc";
+import { ensureNamespace } from "./misc";
 
 /**
  * Replace {@link ItemStack} in a {@link Container}

@@ -1,5 +1,5 @@
 import { Effect, EffectType, Entity } from "@minecraft/server";
-import { BadEffects, GoodEffects } from "../types";
+import { BadEffects, GoodEffects } from "./types";
 
 /**
  * Wrapper function for removing effect(s) or effect group.

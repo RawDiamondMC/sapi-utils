@@ -1,21 +1,21 @@
-import { initWatchdogListener } from "./server/system";
+import { initWatchdogListener } from "./system";
 
 export * as misc from "./misc.js";
 export * as logger from "./logger.js";
 export * as types from "./types.js";
-export * as item from "./server/item.js";
-export * as block from "./server/block.js";
-export * as entity from "./server/entity.js";
-export * as player from "./server/player.js";
-export * as system from "./server/system.js";
+export * as item from "./item.js";
+export * as block from "./block.js";
+export * as entity from "./entity.js";
+export * as player from "./player.js";
+export * as system from "./system.js";
 export * from "./misc.js";
 export * from "./types.js";
-export * from "./server/item.js";
-export * from "./server/block.js";
-export * from "./server/entity.js";
-export * from "./server/player.js";
+export * from "./item.js";
+export * from "./block.js";
+export * from "./entity.js";
+export * from "./player.js";
 export * from "./logger.js";
-export * from "./server/system.js";
+export * from "./system.js";
 
 let initialized: boolean = false;
 
