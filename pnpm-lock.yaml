@@ -10,17 +10,17 @@ importers:
     dependencies:
       '@minecraft/server':
         specifier: '>=1.10.0-beta.1.20.70-preview.20 <1.10.0-rc.1.20.80-preview.20 || >=1.11.0-beta.1.20.80-preview.20 <1.11.0-rc.1.21.0-preview.20 || >=1.12.0-beta.1.21.0-preview.20 <1.12.0-rc.1.21.10-preview.20 || >=1.13.0-beta.1.21.10-preview.20 <1.13.0-rc'
-        version: 1.11.0-beta.1.20.80-stable
+        version: 1.13.0-beta.1.21.10-preview.24
     devDependencies:
       '@types/node':
-        specifier: ^20.14.9
-        version: 20.14.9
+        specifier: ^20.14.10
+        version: 20.14.10
       esbuild:
         specifier: ^0.23.0
         version: 0.23.0
       tsx:
-        specifier: ^4.16.0
-        version: 4.16.0
+        specifier: ^4.16.2
+        version: 4.16.2
       typescript:
         specifier: 5.5.3
         version: 5.5.3
@@ -312,11 +312,11 @@ packages:
   '@minecraft/common@1.2.0':
     resolution: {integrity: sha512-JdmEq4P3Z/FtoBzhLijFgMSVFnFRrUoLwY8DHHrgtFo0mfLTOLTB1RErYjLMsA6b7BGVNxkX/pfFRiH7QZ0XwQ==}
 
-  '@minecraft/server@1.11.0-beta.1.20.80-stable':
-    resolution: {integrity: sha512-nedguYKlNHbwe34YlmwF4R1K3ZDW3qzD7xnxODt9PuSwyFfmQzTG0JbN6ulBrMdE60VwQ3qBr46sGO6xtaNJSA==}
+  '@minecraft/server@1.13.0-beta.1.21.10-preview.24':
+    resolution: {integrity: sha512-5Y8J8/SmI92VkAhlQvpIthKw+WN4/RGWq7srY4Fnzlgc/XmvhxPqVE7NkzGjRz0a9BZUNfVrLX0CB1wXJbGcoQ==}
 
-  '@types/node@20.14.9':
-    resolution: {integrity: sha512-06OCtnTXtWOZBJlRApleWndH4JsRVs1pDCc8dLSQp+7PpUpX3ePdHyeNSFTeSe7FtKyQkrlPvHwJOW3SLd8Oyg==}
+  '@types/node@20.14.10':
+    resolution: {integrity: sha512-MdiXf+nDuMvY0gJKxyfZ7/6UFsETO7mGKF54MVD/ekJS6HdFtpZFBgrh6Pseu64XTb2MLyFPlbW6hj8HYRQNOQ==}
 
   esbuild@0.21.5:
     resolution: {integrity: sha512-mg3OPMV4hXywwpoDxu3Qda5xCKQi+vCTZq8S9J/EpkhB2HzKXq4SNFZE3+NK93JYxc8VMSep+lOUSC/RVKaBqw==}
@@ -339,8 +339,8 @@ packages:
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
 
-  tsx@4.16.0:
-    resolution: {integrity: sha512-MPgN+CuY+4iKxGoJNPv+1pyo5YWZAQ5XfsyobUG+zoKG7IkvCPLZDEyoIb8yLS2FcWci1nlxAqmvPlFWD5AFiQ==}
+  tsx@4.16.2:
+    resolution: {integrity: sha512-C1uWweJDgdtX2x600HjaFaucXTilT7tgUZHbOE4+ypskZ1OP8CRCSDkCxG6Vya9EwaFIVagWwpaVAn5wzypaqQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -497,11 +497,11 @@ snapshots:
 
   '@minecraft/common@1.2.0': {}
 
-  '@minecraft/server@1.11.0-beta.1.20.80-stable':
+  '@minecraft/server@1.13.0-beta.1.21.10-preview.24':
     dependencies:
       '@minecraft/common': 1.2.0
 
-  '@types/node@20.14.9':
+  '@types/node@20.14.10':
     dependencies:
       undici-types: 5.26.5
 
@@ -567,7 +567,7 @@ snapshots:
 
   resolve-pkg-maps@1.0.0: {}
 
-  tsx@4.16.0:
+  tsx@4.16.2:
     dependencies:
       esbuild: 0.21.5
       get-tsconfig: 4.7.5
