@@ -10,7 +10,7 @@ import {
 
 /**
  * Replace {@link ItemStack} in a {@link Container}
- * @param item The {@link ItemStack} or {@link ItemStack.typeId} to be replaced.
+ * @param item The {@link ItemStack} or {@link ItemStack.type.id} to be replaced.
  * if it's undefined, every empty slot will be filled.
  * @param newItem the new {@link ItemStack}.
  * if it's undefined, the matched slot will be cleared.
@@ -32,7 +32,7 @@ export function replaceItemStack(
       amount++;
       continue;
     }
-    if (itemStack?.typeId === item) {
+    if (itemStack?.type.id === item) {
       container.setItem(slot, newItem);
       amount++;
     }
@@ -87,11 +87,11 @@ export function consumeAmount(
   if (amount === value) return undefined;
   if (amount - value < 0)
     throw new Error(
-      `ItemStack ${item.typeId} doesn't have enough amount to be removed! Current: ${amount}.`,
+      `ItemStack ${item.type.id} doesn't have enough amount to be removed! Current: ${amount}.`,
     );
   if (amount - value > item.maxAmount)
     throw new Error(
-      `ItemStack ${item.typeId}'s max amount is not high enough!`,
+      `ItemStack ${item.type.id}'s max amount is not high enough!`,
     );
   const newItem: ItemStack = item.clone();
   newItem.amount = amount - value;
@@ -107,7 +107,7 @@ export function getItemAmountInContainer(container: Container, item: string) {
   let amount: number = 0;
   for (let slot = 0; slot < container.size; slot++) {
     const itemStack: undefined | ItemStack = container.getItem(slot);
-    if (itemStack?.typeId === item) {
+    if (itemStack?.type.id === item) {
       amount++;
     }
   }
@@ -127,7 +127,7 @@ export function removeItemInContainer(
 ) {
   for (let slot = 0; slot < container.size; slot++) {
     const itemStack: undefined | ItemStack = container.getItem(slot);
-    if (itemStack?.typeId === itemId) {
+    if (itemStack?.type.id === itemId) {
       if (itemStack.amount > amount) {
         itemStack.amount -= amount;
         container.setItem(slot, itemStack);

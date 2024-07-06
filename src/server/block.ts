@@ -2,7 +2,7 @@ import { Block, BlockVolume, Dimension, Vector3 } from "@minecraft/server";
 
 /**
  * Find blocks around the given location with specific radius.
- * @param blockId The {@link Block.typeId} to be searched.
+ * @param blockId The {@link Block.type.id} to be searched.
  * @param location
  * @param dimension
  * @param radius
@@ -22,7 +22,7 @@ export function findBlocks(
           y: y,
           z: z,
         });
-        if (block?.typeId === blockId) {
+        if (block?.type.id === blockId) {
           blocks.push(block);
         }
       }
@@ -52,7 +52,7 @@ export function findBlocksByVolume(
           y: y,
           z: z,
         });
-        if (block?.typeId === blockId) {
+        if (block?.type.id === blockId) {
           blocks.push(block);
         }
       }
