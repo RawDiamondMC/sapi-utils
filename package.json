@@ -35,7 +35,7 @@
     "@types/node": "^20.14.10"
   },
   "peerDependencies": {
-    "@minecraft/server": ">=1.10.0-beta.1.20.70-preview.20 <1.10.0-rc.1.20.80-preview.20 || >=1.11.0-beta.1.20.80-preview.20 <1.11.0-rc.1.21.0-preview.20 || >=1.12.0-beta.1.21.0-preview.20 <1.12.0-rc.1.21.10-preview.20 || >=1.13.0-beta.1.21.10-preview.20 <1.13.0-rc"
+    "@minecraft/server": ">=1.10.0-beta.1.20.70-preview.20 <1.10.0-rc.1.20.80-preview.20 || >=1.11.0-beta.1.20.80-preview.20 <1.11.0-rc.1.21.0-preview.20 || >=1.12.0-beta.1.21.0-preview.20 <1.12.0-rc.1.21.10-preview.20 || >=1.13.0-beta.1.21.10-preview.20 <1.13.0-rc.1.21.20-preview.21 || >=1.14.0-beta.1.21.20-preview.21 < 1.14.0-rc"
   },
   "packageManager": "pnpm@9.4.0",
   "typings": "src/index.d.ts"
