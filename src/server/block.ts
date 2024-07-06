@@ -1,4 +1,5 @@
 import { Block, BlockVolume, Dimension, Vector3 } from "@minecraft/server";
+import { ensureNamespace } from "../misc";
 
 /**
  * Find blocks around the given location with specific radius.
@@ -13,6 +14,7 @@ export function findBlocks(
   dimension: Dimension,
   radius: number,
 ): Block[] {
+  blockId = ensureNamespace(blockId);
   let blocks: Block[] = [];
   for (let x = location.x - radius; x <= location.x + radius; x++) {
     for (let y = location.y - radius; y <= location.y + radius; y++) {
@@ -30,6 +32,7 @@ export function findBlocks(
   }
   return blocks;
 }
+
 /**
  * Find blocks around the given location with specific radius.
  * @param blockId The block to be searched for.
@@ -41,6 +44,7 @@ export function findBlocksByVolume(
   volume: BlockVolume,
   dimension: Dimension,
 ): Block[] {
+  blockId = ensureNamespace(blockId);
   let blocks: Block[] = [];
   const min: Vector3 = volume.getMin();
   const max: Vector3 = volume.getMax();

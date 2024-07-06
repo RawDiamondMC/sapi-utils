@@ -1,4 +1,5 @@
 import { system } from "@minecraft/server";
+
 export * from "./stringify.js";
 
 /**
@@ -55,4 +56,12 @@ export function requireNonNull(object: any, message?: string) {
     throw new Error(message);
   }
   return object;
+}
+
+/**
+ * Ensure that namespace is present.
+ * @param str
+ */
+export function ensureNamespace(str: string) {
+  return str.includes(":") ? str : "minecraft:" + str;
 }

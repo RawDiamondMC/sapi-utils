@@ -7,6 +7,7 @@ import {
   ItemStack,
   Player,
 } from "@minecraft/server";
+import { ensureNamespace } from "../misc";
 
 /**
  * Replace {@link ItemStack} in a {@link Container}
@@ -27,14 +28,24 @@ export function replaceItemStack(
   }
   for (let slot = 0; slot < container.size; slot++) {
     const itemStack: undefined | ItemStack = container.getItem(slot);
-    if (itemStack === item) {
-      container.setItem(slot, newItem);
-      amount++;
-      continue;
-    }
-    if (itemStack?.type.id === item) {
-      container.setItem(slot, newItem);
-      amount++;
+    switch (typeof item) {
+      case "object":
+        if (itemStack === item) {
+          container.setItem(slot, newItem);
+          amount++;
+          continue;
+        }
+        break;
+      case "string":
+        if (itemStack?.type.id === ensureNamespace(<string>item)) {
+          container.setItem(slot, newItem);
+          amount++;
+        }
+        break;
+      default:
+        container.setItem(slot, newItem);
+        amount++;
+        break;
     }
   }
   return amount;
@@ -104,6 +115,7 @@ export function consumeAmount(
  * @param item the item's id
  */
 export function getItemAmountInContainer(container: Container, item: string) {
+  item = ensureNamespace(item);
   let amount: number = 0;
   for (let slot = 0; slot < container.size; slot++) {
     const itemStack: undefined | ItemStack = container.getItem(slot);
@@ -125,6 +137,7 @@ export function removeItemInContainer(
   itemId: string,
   amount: number,
 ) {
+  itemId = ensureNamespace(itemId);
   for (let slot = 0; slot < container.size; slot++) {
     const itemStack: undefined | ItemStack = container.getItem(slot);
     if (itemStack?.type.id === itemId) {
